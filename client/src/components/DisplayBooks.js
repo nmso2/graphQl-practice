@@ -4,6 +4,7 @@ import { GET_BOOKS } from "../queries/queries";
 
 const DisplayBooks = () => {
   const { loading, error, data } = useQuery(GET_BOOKS);
+  console.log(data.books);
   if (loading) {
     return <p>Data is loading</p>;
   } else {
