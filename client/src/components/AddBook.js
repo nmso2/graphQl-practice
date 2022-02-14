@@ -5,11 +5,8 @@ import { GET_AUTHORS, ADD_BOOKS } from "../queries/queries";
 const AddBook = () => {
   const { loading, error, data } = useQuery(GET_AUTHORS);
 
-  console.log(data?.books);
-
+  // const [addBook, { loading, error, data }] = useMutation(ADD_BOOKS);
   const [addBook] = useMutation(ADD_BOOKS);
-
-  console.log(useMutation(ADD_BOOKS));
 
   const [name, setName] = useState("");
   const [genre, setGenre] = useState("");
@@ -17,9 +14,6 @@ const AddBook = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    console.log({ name, genre, authorId });
-
     addBook({ variables: { name: name, genre: genre, authorId: authorId } });
   };
 
