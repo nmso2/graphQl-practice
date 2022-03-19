@@ -19,14 +19,14 @@ const DisplayBooks = () => {
     });
   };
 
-  console.log(data?.books);
+  // console.log(data?.books);
   if (loading) {
     return <p>Data is loading</p>;
   } else {
     return (
       <div>
         <ul>
-          {data.books.map((book) => {
+          {data?.books.map((book) => {
             return (
               <li key={book.id}>
                 {book.name}

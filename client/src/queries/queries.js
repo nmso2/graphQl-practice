@@ -16,6 +16,14 @@ const GET_BOOKS = gql`
       name
       genre
       id
+      author {
+        name
+        age
+        books {
+          name
+          genre
+        }
+      }
     }
   }
 `;

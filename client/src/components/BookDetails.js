@@ -18,6 +18,10 @@ const BookDetails = ({ book }) => {
 
   const [editBook] = useMutation(EDIT_BOOK);
 
+  const { data: singleBook } = useQuery(GET_BOOK, {
+    variables: { id: "62356205a1944011a1235f9a" },
+  });
+
   const {
     register,
     handleSubmit,
@@ -39,7 +43,7 @@ const BookDetails = ({ book }) => {
     });
   };
 
-  console.log(book?.name);
+  console.log(book);
 
   useEffect(() => {
     reset();
